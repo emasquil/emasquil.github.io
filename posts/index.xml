@@ -1,0 +1,24 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Hello, my name is Elías</title>
+        <link>https://emasquil.github.io/posts/</link>
+        <description>Recent content in Posts on Hello, my name is Elías</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Mon, 27 Apr 2020 03:18:55 -0300</lastBuildDate>
+        <atom:link href="https://emasquil.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>`hello world`</title>
+            <link>https://emasquil.github.io/posts/hello-world/</link>
+            <pubDate>Mon, 27 Apr 2020 03:18:55 -0300</pubDate>
+            
+            <guid>https://emasquil.github.io/posts/hello-world/</guid>
+            <description>How could I start this blog in any different way?</description>
+            <content type="html"><![CDATA[<p>How could I start this blog in any different way?</p>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>

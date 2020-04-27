@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contents on Hello, my name is Elías</title>
+    <link>https://emasquil.github.io/content/</link>
+    <description>Recent content in Contents on Hello, my name is Elías</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 27 Apr 2020 03:18:55 -0300</lastBuildDate>
+    
+	<atom:link href="https://emasquil.github.io/content/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>`hello world`</title>
+      <link>https://emasquil.github.io/content/posts/hello-world/</link>
+      <pubDate>Mon, 27 Apr 2020 03:18:55 -0300</pubDate>
+      
+      <guid>https://emasquil.github.io/content/posts/hello-world/</guid>
+      <description>How could I start this blog in any different way?</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://emasquil.github.io/content/about/</link>
+      <pubDate>Mon, 27 Apr 2020 02:48:42 -0300</pubDate>
+      
+      <guid>https://emasquil.github.io/content/about/</guid>
+      <description>I hold a degree in Electrical Engineering from Universidad de la República, UdelaR. I like working on Computer Vision, Signal Processing and Machine Learning in general.
+Currently I work as a Machine Learning Engineer at Tryolabs.
+Apart from programming and training neural networks, I like gaming, reading, playing the guitar and tweeting. I&amp;rsquo;m also a football fan and I love supporting my team Club Nacional de Football.</description>
+    </item>
+    
+  </channel>
+</rss>
