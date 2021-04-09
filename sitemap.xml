@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://emasquil.github.io/posts/multithreading-boto3/</loc>
+    <lastmod>2021-04-09T18:33:17-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://emasquil.github.io/posts/</loc>
+    <lastmod>2021-04-09T18:33:17-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://emasquil.github.io/content/posts/hello-world/</loc>
     <lastmod>2020-04-27T03:18:55-03:00</lastmod>
   </url>
@@ -14,11 +24,6 @@
   
   <url>
     <loc>https://emasquil.github.io/content/</loc>
-    <lastmod>2020-04-27T03:18:55-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://emasquil.github.io/posts/</loc>
     <lastmod>2020-04-27T03:18:55-03:00</lastmod>
   </url>
   
