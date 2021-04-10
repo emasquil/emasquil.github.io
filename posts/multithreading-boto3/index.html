@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Elías Masquil ">
 <meta name="description" content="Yesterday I found myself googling how to do something that I&amp;rsquo;d think it was pretty standard: How to download multiple files from AWS S3 in parallel using Python?
-After not founding anything reliable in Stack Overflow, I went to the Boto3 documentation and started coding. Something I thought it would take me like 15 mins, ended up taking me a couple of hours. I&amp;rsquo;m writing this post with the hope I can help somebody who needs to perform this basic task and possibly me in the future." />
+After not finding anything reliable in Stack Overflow, I went to the Boto3 documentation and started coding. Something I thought it would take me like 15 mins, ended up taking me a couple of hours. I&amp;rsquo;m writing this post with the hope I can help somebody who needs to perform this basic task and possibly me in the future." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -35,10 +35,10 @@ After not founding anything reliable in Stack Overflow, I went to the Boto3 docu
 
 <meta itemprop="name" content="Downloading files from S3 with multithreading and Boto3">
 <meta itemprop="description" content="Yesterday I found myself googling how to do something that I&rsquo;d think it was pretty standard: How to download multiple files from AWS S3 in parallel using Python?
-After not founding anything reliable in Stack Overflow, I went to the Boto3 documentation and started coding. Something I thought it would take me like 15 mins, ended up taking me a couple of hours. I&rsquo;m writing this post with the hope I can help somebody who needs to perform this basic task and possibly me in the future.">
+After not finding anything reliable in Stack Overflow, I went to the Boto3 documentation and started coding. Something I thought it would take me like 15 mins, ended up taking me a couple of hours. I&rsquo;m writing this post with the hope I can help somebody who needs to perform this basic task and possibly me in the future.">
 <meta itemprop="datePublished" content="2021-04-09T18:33:17-03:00" />
 <meta itemprop="dateModified" content="2021-04-09T18:33:17-03:00" />
-<meta itemprop="wordCount" content="1315">
+<meta itemprop="wordCount" content="1163">
 <meta itemprop="image" content="https://emasquil.github.io"/>
 
 
@@ -49,13 +49,13 @@ After not founding anything reliable in Stack Overflow, I went to the Boto3 docu
 
 <meta name="twitter:title" content="Downloading files from S3 with multithreading and Boto3"/>
 <meta name="twitter:description" content="Yesterday I found myself googling how to do something that I&rsquo;d think it was pretty standard: How to download multiple files from AWS S3 in parallel using Python?
-After not founding anything reliable in Stack Overflow, I went to the Boto3 documentation and started coding. Something I thought it would take me like 15 mins, ended up taking me a couple of hours. I&rsquo;m writing this post with the hope I can help somebody who needs to perform this basic task and possibly me in the future."/>
+After not finding anything reliable in Stack Overflow, I went to the Boto3 documentation and started coding. Something I thought it would take me like 15 mins, ended up taking me a couple of hours. I&rsquo;m writing this post with the hope I can help somebody who needs to perform this basic task and possibly me in the future."/>
 
 
 
     <meta property="og:title" content="Downloading files from S3 with multithreading and Boto3" />
 <meta property="og:description" content="Yesterday I found myself googling how to do something that I&rsquo;d think it was pretty standard: How to download multiple files from AWS S3 in parallel using Python?
-After not founding anything reliable in Stack Overflow, I went to the Boto3 documentation and started coding. Something I thought it would take me like 15 mins, ended up taking me a couple of hours. I&rsquo;m writing this post with the hope I can help somebody who needs to perform this basic task and possibly me in the future." />
+After not finding anything reliable in Stack Overflow, I went to the Boto3 documentation and started coding. Something I thought it would take me like 15 mins, ended up taking me a couple of hours. I&rsquo;m writing this post with the hope I can help somebody who needs to perform this basic task and possibly me in the future." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://emasquil.github.io/posts/multithreading-boto3/" />
 <meta property="og:image" content="https://emasquil.github.io"/>
@@ -128,7 +128,7 @@ After not founding anything reliable in Stack Overflow, I went to the Boto3 docu
     <main class="post">
 
         <div class="post-info">
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>7 minutes
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>6 minutes
 
             
 
@@ -144,13 +144,12 @@ After not founding anything reliable in Stack Overflow, I went to the Boto3 docu
 
             <div class="post-content">
                 <p>Yesterday I found myself googling how to do something that I&rsquo;d think it was pretty standard: How to download multiple files from <a href="https://aws.amazon.com/">AWS</a> <a href="https://aws.amazon.com/s3/">S3</a> in parallel using Python?</p>
-<p>After not founding anything reliable in <a href="https://stackoverflow.com/">Stack Overflow</a>, I went to the Boto3 <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/index.html">documentation</a> and started coding. Something I thought it would take me like 15 mins, ended up taking me a couple of hours. I&rsquo;m writing this post with the hope I can help somebody who needs to perform this basic task and possibly me in the future.</p>
+<p>After not finding anything reliable in <a href="https://stackoverflow.com/">Stack Overflow</a>, I went to the Boto3 <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/index.html">documentation</a> and started coding. Something I thought it would take me like 15 mins, ended up taking me a couple of hours. I&rsquo;m writing this post with the hope I can help somebody who needs to perform this basic task and possibly me in the future.</p>
 <p>This blogpost is organized as follows, if you&rsquo;re just looking for the working snippet go to <a href="#solution-with-tqdm-working-with-multiple-threads">3</a>:</p>
 <ol>
 <li><a href="#boto3-in-a-nutshell-clients-sessions-and-resources">Boto3 in a nutshell: clients, sessions and resources</a></li>
 <li><a href="#is-boto3-threadsafe">Is Boto3 threadsafe?</a></li>
 <li><a href="#solution-with-tqdm-working-with-multiple-threads">Solution (with tqdm working with multiple threads)</a></li>
-<li><a href="#appendix-multiple-clients-are-unstable">Appendix: Multiple clients are unstable</a></li>
 </ol>
 <hr>
 <h2 id="boto3-in-a-nutshell-clients-sessions-and-resources">Boto3 in a nutshell: clients, sessions, and resources</h2>
@@ -161,10 +160,10 @@ After not founding anything reliable in Stack Overflow, I went to the Boto3 docu
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> boto3
 
 <span style="color:#75715e"># creating a session with the default settings</span>
-session <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>session() 
+session <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>Session()
 
 <span style="color:#75715e"># creating another session for a different region</span>
-session_other_region <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>session(region_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;us-west-2)</span>
+session_other_region <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>Session(region_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;us-west-2)</span>
 </code></pre></div><p>Once you have a session, there are two different APIs to interact with AWS: client (low level) and resource (high level)</p>
 <h3 id="client">Client</h3>
 <p>A client provides a low level API to interact with the AWS resources. You can perform <em>all</em> available AWS actions with a client.</p>
@@ -182,8 +181,8 @@ s3<span style="color:#f92672">.</span>buckets<span style="color:#f92672">.</span
 </code></pre></div><p>you are just using the default session which loads all the default settings.</p>
 <hr>
 <h2 id="is-boto3-threadsafe">Is Boto3 threadsafe?</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">TL;DR clients are threadsafe but sessions are resources are not.</code></pre></div>
-<p>Although the <a href="https://boto3.amazonaws.com/v1/documentation/api/1.14.31/guide/session.html#multithreading-or-multiprocessing-with-sessions">documentation</a> specifically address this question, it&rsquo;s not clear. Luckily I&rsquo;m not the only one who found it confusing, this <a href="https://github.com/boto/botocore/issues/1246">issue</a> from 2017 still remains active and open.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">TL;DR clients are threadsafe but sessions and resources are not.</code></pre></div>
+<p>Although the <a href="https://boto3.amazonaws.com/v1/documentation/api/1.14.31/guide/session.html#multithreading-or-multiprocessing-with-sessions">documentation</a> specifically addresses this question, it&rsquo;s not clear. Luckily I&rsquo;m not the only one who found it confusing, this <a href="https://github.com/boto/botocore/issues/1246">issue</a> from 2017 still remains active and open.</p>
 <p>The docs say:</p>
 <blockquote>
 <p>&ldquo;It is recommended to create a resource instance for each thread / process in a multithreaded or multiprocess application rather than sharing a single instance among the threads / processes. For example:&rdquo;</p>
@@ -216,16 +215,40 @@ s3<span style="color:#f92672">.</span>buckets<span style="color:#f92672">.</span
         s3 <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>resource(<span style="color:#e6db74">&#39;s3&#39;</span>)
 
         <span style="color:#75715e"># Put your thread-safe code here</span>
-</code></pre></div><p>Based on that explanation, I understood that I had to create a new session (and client) in each thread. Doing that, not only ends up being quite slow, since creating a session has some overhead, but ended up failing in some downloads (more on that in <a href="##Appendix-Multiple-clients-are-unstable">Appendix: Multiple clients are unstable</a>).</p>
+</code></pre></div><p>Based on that explanation, I understood that I had to create a new session (and client) in each thread. Doing that ends up being quite slow, since creating a session has some overhead.</p>
 <p>Actually you can create only one session and one client and pass that client to each thread, see the <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/resources.html#multithreading-and-multiprocessing">note</a>. Since clients are thread safe there&rsquo;s nothing wrong with that. However, if you need to interact with the session object, you need to create one session in each thread, that wasn&rsquo;t the case.</p>
-<hr>
+<p>Here&rsquo;s a quick test to compare the two solutions, sharing the client between threads vs creating a new session and client in each thread:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">list_all_buckets_new_client</span>():
+    session <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>Session()
+    client <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>client(<span style="color:#e6db74">&#39;s3&#39;</span>)
+    client<span style="color:#f92672">.</span>list_buckets()
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">list_all_buckets_one_client</span>(client):
+    client<span style="color:#f92672">.</span>list_buckets()
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">shared_client</span>():
+    session <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>Session()
+    client <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>client(<span style="color:#e6db74">&#39;s3&#39;</span>)
+    <span style="color:#66d9ef">with</span> ThreadPoolExecutor(max_workers<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>) <span style="color:#66d9ef">as</span> executor:
+        futures <span style="color:#f92672">=</span> [executor<span style="color:#f92672">.</span>submit(list_all_buckets_one_client, client) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">100</span>)]
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">multiple_clients</span>():
+     <span style="color:#66d9ef">with</span> ThreadPoolExecutor(max_workers<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>) <span style="color:#66d9ef">as</span> executor:
+         futures <span style="color:#f92672">=</span> [executor<span style="color:#f92672">.</span>submit(list_all_buckets_new_client) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">100</span>)]
+
+<span style="color:#f92672">%</span>timeit shared_client()
+<span style="color:#ae81ff">3.05</span> s <span style="color:#960050;background-color:#1e0010">±</span> <span style="color:#ae81ff">101</span> ms per loop (mean <span style="color:#960050;background-color:#1e0010">±</span> std<span style="color:#f92672">.</span> dev<span style="color:#f92672">.</span> of <span style="color:#ae81ff">7</span> runs, <span style="color:#ae81ff">1</span> loop each)
+
+<span style="color:#f92672">%</span>timeit multiple_clients()
+<span style="color:#ae81ff">12.2</span> s <span style="color:#960050;background-color:#1e0010">±</span> <span style="color:#ae81ff">562</span> ms per loop (mean <span style="color:#960050;background-color:#1e0010">±</span> std<span style="color:#f92672">.</span> dev<span style="color:#f92672">.</span> of <span style="color:#ae81ff">7</span> runs, <span style="color:#ae81ff">1</span> loop each)
+</code></pre></div><hr>
 <h2 id="solution-with-tqdm-working-with-multiple-threads">Solution (with tqdm working with multiple threads)</h2>
 <p>Context: I needed to download multiple zip files from one single S3 bucket.</p>
 <p>Requirement: I wanted to do it in parallel since each download was independent from the others.</p>
 <p>Bonus: Have a progress bar using <a href="https://github.com/tqdm/tqdm">tqdm</a> that updated on each download.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">TL;DR instantiate one client and pass it to each thread. </code></pre></div>
 <p>Although all of this seems pretty standard, it wasn&rsquo;t easy to find a working solution neither for using multithreading with Boto3 or using multithreading with tqdm. I hope this is useful for somebody out there having this (also) pretty standard problem.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> concurrent.futures <span style="color:#f92672">import</span> threadpoolexecutor, as_completed
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> concurrent.futures <span style="color:#f92672">import</span> Threadpoolexecutor, as_completed
 <span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> partial
 <span style="color:#f92672">import</span> os
 
@@ -277,43 +300,9 @@ failed_downloads <span style="color:#f92672">=</span> []
         wr <span style="color:#f92672">=</span> csv<span style="color:#f92672">.</span>writer(csvfile, quoting<span style="color:#f92672">=</span>csv<span style="color:#f92672">.</span>QUOTE_ALL)
         wr<span style="color:#f92672">.</span>writerow(failed_downloads)
 </code></pre></div><hr>
-<h2 id="appendix-multiple-clients-are-unstable">Appendix: Multiple clients are unstable</h2>
-<p>After initially reading the documentation, I thought I needed to create a session and a client in each thread.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">download_one_file_wrong_version</span>(bucket: str, output: str, s3_file: str):
-    <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    (WRONG VERSION) Download a single file from S3
-</span><span style="color:#e6db74">    Args:
-</span><span style="color:#e6db74">        bucket (str): S3 bucket where images are hosted
-</span><span style="color:#e6db74">        output (str): Dir to store the images
-</span><span style="color:#e6db74">        s3_file (str): S3 object name
-</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-
-    session <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>Session()
-    client <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>client(<span style="color:#e6db74">&#34;s3&#34;</span>)
-
-    client<span style="color:#f92672">.</span>download_file(
-        Bucket<span style="color:#f92672">=</span>bucket, Key<span style="color:#f92672">=</span>s3_file, Filename<span style="color:#f92672">=</span>os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(output, s3_file)
-    )
-
-func <span style="color:#f92672">=</span> partial(download_one_file_wrong_version, AWS_BUCKET, OUTPUT_DIR)
-
-<span style="color:#66d9ef">with</span> ThreadPoolExecutor(max_workers<span style="color:#f92672">=</span><span style="color:#ae81ff">32</span>) <span style="color:#66d9ef">as</span> executor:
-    futures <span style="color:#f92672">=</span> [
-        executor<span style="color:#f92672">.</span>submit(func, file_to_download) <span style="color:#66d9ef">for</span> file_to_download <span style="color:#f92672">in</span> files_to_download
-    ]
-</code></pre></div><p>This led to some of the requests failing in an unpredictable way. Some <code>futures</code> would raise <code>botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: &quot;https://my-bucket.s3.amazonaws.com/my-file&quot;</code>.</p>
-<p>After trying the previous code with different number of workers, I noticed that downloads were more likely to fail as the number of workers increased. That led me to think that Boto3 is doing something strange with each client and maybe I&rsquo;m getting out of sockets.</p>
-<p>To discard that this was related with multithreading I tried this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">session <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>Session()
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">500</span>):
-    client <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>client(<span style="color:#e6db74">&#39;s3&#39;</span>)
-    client<span style="color:#f92672">.</span>list_buckets()
-</code></pre></div><p>And again, some of those <code>list_buckets</code> requests ended up raising the same exception <code>botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: &quot;https://s3.amazonaws.com&quot;</code>.
-I suspect it&rsquo;s related with leaking socket connections but I couldn&rsquo;t prove it.</p>
-<hr>
 <p>Thanks for reading!</p>
 <p>I hope you now understood which features of Boto3 are threadsafe and which are not, and most importantly, that you learned how to download multiple files from S3 in parallel using Python.</p>
-<p>I&rsquo;d be thrilled to keep the discussion on the issue of spawning multiple clients. Also, if you have any doubts or comments, reach out on <a href="https://twitter.com/emasquil">Twitter</a> or by <a href="mailto:emasquildev@gmail.com">email</a>.</p>
+<p>If you have any doubts or comments, reach out on <a href="https://twitter.com/emasquil">Twitter</a> or by <a href="mailto:emasquildev@gmail.com">email</a>.</p>
 
             </div>
         </article>
@@ -322,7 +311,7 @@ I suspect it&rsquo;s related with leaking socket connections but I couldn&rsquo;
 
         <div class="post-info">
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1315 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1163 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2021-04-09 18:33 -0300</p>
         </div>

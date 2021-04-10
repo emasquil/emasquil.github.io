@@ -19,7 +19,7 @@
       
       <guid>https://emasquil.github.io/posts/multithreading-boto3/</guid>
       <description>Yesterday I found myself googling how to do something that I&amp;rsquo;d think it was pretty standard: How to download multiple files from AWS S3 in parallel using Python?
-After not founding anything reliable in Stack Overflow, I went to the Boto3 documentation and started coding. Something I thought it would take me like 15 mins, ended up taking me a couple of hours. I&amp;rsquo;m writing this post with the hope I can help somebody who needs to perform this basic task and possibly me in the future.</description>
+After not finding anything reliable in Stack Overflow, I went to the Boto3 documentation and started coding. Something I thought it would take me like 15 mins, ended up taking me a couple of hours. I&amp;rsquo;m writing this post with the hope I can help somebody who needs to perform this basic task and possibly me in the future.</description>
     </item>
     
     <item>
