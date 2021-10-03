@@ -30,7 +30,7 @@ After not finding anything reliable in Stack Overflow, I went to the Boto3 docum
 <p>Boto3 is the official Python SDK for accessing and managing all AWS resources. Generally it&rsquo;s pretty straightforward to use but sometimes it has weird behaviours, and its documentation can be confusing.</p>
 <p>Its 3 most used features are: sessions, clients, and resources.</p>
 <h3 id="session">Session</h3>
-<p>&ldquo;A session manages state about a particular configuration. By default, a session is created for you when needed. However, it&rsquo;s possible and recommended that in some scenarios you maintain your own session.&quot;, according to the <a href="https://boto3.amazonaws.com/v1/documentation/api/1.14.31/guide/session.html">docs</a>. Basically it&rsquo;s an object that stores all the relevant configuration you&rsquo;ll need to interact with AWS. You&rsquo;ll mainly be setting the IAM credentials and region with it.</p>
+<p>&ldquo;A session manages state about a particular configuration. By default, a session is created for you when needed. However, it&rsquo;s possible and recommended that in some scenarios you maintain your own session.&rdquo;, according to the <a href="https://boto3.amazonaws.com/v1/documentation/api/1.14.31/guide/session.html">docs</a>. Basically it&rsquo;s an object that stores all the relevant configuration you&rsquo;ll need to interact with AWS. You&rsquo;ll mainly be setting the IAM credentials and region with it.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> boto3
 
 <span style="color:#75715e"># creating a session with the default settings</span>

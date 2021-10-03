@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 27 Apr 2020 02:48:42 -0300</lastBuildDate>
-    
-	<atom:link href="https://emasquil.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 09 Apr 2021 18:33:17 -0300</lastBuildDate><atom:link href="https://emasquil.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Downloading files from S3 with multithreading and Boto3</title>
       <link>https://emasquil.github.io/posts/multithreading-boto3/</link>
@@ -46,9 +42,8 @@ After not finding anything reliable in Stack Overflow, I went to the Boto3 docum
       <pubDate>Mon, 27 Apr 2020 02:48:42 -0300</pubDate>
       
       <guid>https://emasquil.github.io/about/</guid>
-      <description>I hold a degree in Electrical Engineering from Universidad de la República, UdelaR. I like working on Computer Vision, Signal Processing and Machine Learning in general.
-Currently I work as a Machine Learning Engineer at Tryolabs.
-Apart from programming and training neural networks, I like gaming, reading, playing the guitar and tweeting. I&amp;rsquo;m also a football fan and I love supporting my team Club Nacional de Football.</description>
+      <description>I&amp;rsquo;m a master&amp;rsquo;s student at ENS Paris-Saclay, which is part of the Université Paris-Saclay. I&amp;rsquo;m following the MVA (Math, Vision, and Learning) M2 Master, which is about all the academic topics I love. I hold a degree in Electrical Engineering from Universidad de la República, UdelaR. I like working on Computer Vision, Signal Processing, Reinforcement Learning and Machine Learning in general.
+Apart from programming and training neural networks, I like gaming, reading, and playing the guitar.</description>
     </item>
     
     <item>
