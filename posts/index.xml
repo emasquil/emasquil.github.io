@@ -122,7 +122,7 @@ s3<span style="color:#f92672">.</span>buckets<span style="color:#f92672">.</span
 <p>Bonus: Have a progress bar using <a href="https://github.com/tqdm/tqdm">tqdm</a> that updated on each download.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">TL;DR instantiate one client and pass it to each thread. </code></pre></div>
 <p>Although all of this seems pretty standard, it wasn&rsquo;t easy to find a working solution neither for using multithreading with Boto3 or using multithreading with tqdm. I hope this is useful for somebody out there having this (also) pretty standard problem.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> concurrent.futures <span style="color:#f92672">import</span> Threadpoolexecutor, as_completed
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> concurrent.futures <span style="color:#f92672">import</span> ThreadPoolExecutor, as_completed
 <span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> partial
 <span style="color:#f92672">import</span> os
 
