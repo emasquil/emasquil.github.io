@@ -6,8 +6,50 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Fri, 09 Apr 2021 18:33:17 -0300</lastBuildDate>
+        <lastBuildDate>Wed, 04 May 2022 23:10:23 +0200</lastBuildDate>
         <atom:link href="https://emasquil.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>A principled way to solve problems</title>
+            <link>https://emasquil.github.io/posts/solving-problems/</link>
+            <pubDate>Wed, 04 May 2022 23:10:23 +0200</pubDate>
+            
+            <guid>https://emasquil.github.io/posts/solving-problems/</guid>
+            <description>Today I’m writing some short thoughts on how to design solutions or decide on actions when you face a new problem.
+TL;DR constantly ask yourself what you are trying to do.  One of the main lessons I’ve learned in this short time working in research (as an intern), is to be methodological. Especially when you are doing something from scratch, when there isn’t a clear roadmap, or when there is a lot of uncertainty and many options/things to do.</description>
+            <content type="html"><![CDATA[<p>Today I’m writing some short thoughts on how to design solutions or decide on actions when you face a new problem.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">TL;DR constantly ask yourself what you are trying to do.</code></pre></div>
+<hr>
+<p>One of the main lessons I’ve learned in this short time working in research (as an intern), is to be methodological. Especially when you are doing something from scratch, when there isn’t a clear roadmap, or when there is a lot of uncertainty and many options/things to do.</p>
+<p>Currently, I’m following a tiny framework, I didn’t read or hear about it, it just felt right and it’s helping me in these kinds of situations. It can be summarized as: <strong>constantly ask yourself what you’re trying to do</strong>.</p>
+<p>In situations like the described above, it’s really easy to lose focus and start thinking of different courses of action that might be interesting but deviate from your original objective. If you don’t do this reality check you can end up solving a problem that you didn’t want to, you can end up building a solution that you didn’t need, or you can just lose a lot of time since you end up designing something far more complex than needed.</p>
+<p>The principled way to solve problems is the following:</p>
+<ol>
+<li>
+<p>Ask yourself what’s the problem you’re trying to solve</p>
+<p>Be sure that you understand it deeply, and that you at least have an idea of how would you know that the problem is solved.</p>
+</li>
+<li>
+<p>Propose a course of action</p>
+</li>
+<li>
+<p>Remind yourself: what I was trying to do?</p>
+</li>
+<li>
+<p>Ask the question: <strong>does doing this solve my problem?</strong></p>
+<p>Doing this should transform your problem into your imaginary solved problem (that’s why it’s important to have an idea of how does the solved problem looks like)</p>
+</li>
+<li>
+<p>Do I need to do this?
+All actions should be needed for solving the problem. Any action that is not obviously needed, should be discarded</p>
+</li>
+</ol>
+<hr>
+<p>I hope this was useful for you or at least made you think a little about how you are solving problems.</p>
+<p>Thanks for reading :)</p>
+<p>If you have any comments, reach out on <a href="https://twitter.com/emasquil">Twitter</a> or by <a href="mailto:eliasmasquil@gmail.com">email</a>.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Downloading files from S3 with multithreading and Boto3</title>
@@ -31,7 +73,7 @@ After not finding anything reliable in Stack Overflow, I went to the Boto3 docum
 <p>Its 3 most used features are: sessions, clients, and resources.</p>
 <h3 id="session">Session</h3>
 <p>&ldquo;A session manages state about a particular configuration. By default, a session is created for you when needed. However, it&rsquo;s possible and recommended that in some scenarios you maintain your own session.&rdquo;, according to the <a href="https://boto3.amazonaws.com/v1/documentation/api/1.14.31/guide/session.html">docs</a>. Basically it&rsquo;s an object that stores all the relevant configuration you&rsquo;ll need to interact with AWS. You&rsquo;ll mainly be setting the IAM credentials and region with it.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> boto3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> boto3
 
 <span style="color:#75715e"># creating a session with the default settings</span>
 session <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>Session()
@@ -41,27 +83,27 @@ session_other_region <span style="color:#f92672">=</span> boto3<span style="colo
 </code></pre></div><p>Once you have a session, there are two different APIs to interact with AWS: client (low level) and resource (high level)</p>
 <h3 id="client">Client</h3>
 <p>A client provides a low level API to interact with the AWS resources. You can perform <em>all</em> available AWS actions with a client.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Get all S3 buckets using the client API</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Get all S3 buckets using the client API</span>
 s3 <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>client(<span style="color:#e6db74">&#34;s3&#34;</span>)
 s3<span style="color:#f92672">.</span>list_buckets()
 </code></pre></div><p>I just used sessions and clients but for completeness let&rsquo;s review the resources as well.</p>
 <h3 id="resource">Resource</h3>
 <p>A resource is a high level representation available for <em>some</em> AWS resources such as S3. It can lead to simpler code.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Get all S3 buckets using the resource API</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Get all S3 buckets using the resource API</span>
 s3 <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>resource(<span style="color:#e6db74">&#34;s3&#34;</span>)
 s3<span style="color:#f92672">.</span>buckets<span style="color:#f92672">.</span>all()
 </code></pre></div><p>You can also can directly instantiate a resource and a client, without explicitly defining a session. If you do something like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">s3 <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>resource(<span style="color:#e6db74">&#34;s3&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">s3 <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>resource(<span style="color:#e6db74">&#34;s3&#34;</span>)
 </code></pre></div><p>you are just using the default session which loads all the default settings.</p>
 <hr>
 <h2 id="is-boto3-threadsafe">Is Boto3 threadsafe?</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">TL;DR clients are threadsafe but sessions and resources are not.</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">TL;DR clients are threadsafe but sessions and resources are not.</code></pre></div>
 <p>Although the <a href="https://boto3.amazonaws.com/v1/documentation/api/1.14.31/guide/session.html#multithreading-or-multiprocessing-with-sessions">documentation</a> specifically addresses this question, it&rsquo;s not clear. Luckily I&rsquo;m not the only one who found it confusing, this <a href="https://github.com/boto/botocore/issues/1246">issue</a> from 2017 still remains active and open.</p>
 <p>The docs say:</p>
 <blockquote>
 <p>&ldquo;It is recommended to create a resource instance for each thread / process in a multithreaded or multiprocess application rather than sharing a single instance among the threads / processes. For example:&rdquo;</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> boto3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> boto3
 <span style="color:#f92672">import</span> boto3.session
 <span style="color:#f92672">import</span> threading
 
@@ -76,7 +118,7 @@ s3<span style="color:#f92672">.</span>buckets<span style="color:#f92672">.</span
 <blockquote>
 <p>&ldquo;Similar to Resource objects, Session objects are not thread safe and should not be shared across threads and processes. You should create a new Session object for each thread or process:&rdquo;</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> boto3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> boto3
 <span style="color:#f92672">import</span> boto3.session
 <span style="color:#f92672">import</span> threading
 
@@ -92,7 +134,7 @@ s3<span style="color:#f92672">.</span>buckets<span style="color:#f92672">.</span
 </code></pre></div><p>Based on that explanation, I understood that I had to create a new session (and client) in each thread. Doing that ends up being quite slow, since creating a session has some overhead.</p>
 <p>Actually you can create only one session and one client and pass that client to each thread, see the <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/resources.html#multithreading-and-multiprocessing">note</a>. Since clients are thread safe there&rsquo;s nothing wrong with that. However, if you need to interact with the session object, you need to create one session in each thread, that wasn&rsquo;t the case.</p>
 <p>Here&rsquo;s a quick test to compare the two solutions, sharing the client between threads vs creating a new session and client in each thread:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">list_all_buckets_new_client</span>():
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">list_all_buckets_new_client</span>():
     session <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>Session()
     client <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>client(<span style="color:#e6db74">&#39;s3&#39;</span>)
     client<span style="color:#f92672">.</span>list_buckets()
@@ -120,9 +162,9 @@ s3<span style="color:#f92672">.</span>buckets<span style="color:#f92672">.</span
 <p>Context: I needed to download multiple zip files from one single S3 bucket.</p>
 <p>Requirement: I wanted to do it in parallel since each download was independent from the others.</p>
 <p>Bonus: Have a progress bar using <a href="https://github.com/tqdm/tqdm">tqdm</a> that updated on each download.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">TL;DR instantiate one client and pass it to each thread. </code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">TL;DR instantiate one client and pass it to each thread. </code></pre></div>
 <p>Although all of this seems pretty standard, it wasn&rsquo;t easy to find a working solution neither for using multithreading with Boto3 or using multithreading with tqdm. I hope this is useful for somebody out there having this (also) pretty standard problem.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> concurrent.futures <span style="color:#f92672">import</span> ThreadPoolExecutor, as_completed
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> concurrent.futures <span style="color:#f92672">import</span> ThreadPoolExecutor, as_completed
 <span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> partial
 <span style="color:#f92672">import</span> os
 
@@ -167,7 +209,7 @@ failed_downloads <span style="color:#f92672">=</span> []
                 failed_downloads<span style="color:#f92672">.</span>append(futures[future])
             pbar<span style="color:#f92672">.</span>update(<span style="color:#ae81ff">1</span>)
 <span style="color:#66d9ef">if</span> len(failed_downloads) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Some downloads have failed. Saving ids to csv&#34;</span>)
+    print(<span style="color:#e6db74">&#34;Some downloads have failed. Saving ids to csv&#34;</span>)
     <span style="color:#66d9ef">with</span> open(
         os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(OUTPUT_DIR, <span style="color:#e6db74">&#34;failed_downloads.csv&#34;</span>), <span style="color:#e6db74">&#34;w&#34;</span>, newline<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
     ) <span style="color:#66d9ef">as</span> csvfile:
@@ -176,7 +218,7 @@ failed_downloads <span style="color:#f92672">=</span> []
 </code></pre></div><hr>
 <p>Thanks for reading!</p>
 <p>I hope you now understood which features of Boto3 are threadsafe and which are not, and most importantly, that you learned how to download multiple files from S3 in parallel using Python.</p>
-<p>If you have any doubts or comments, reach out on <a href="https://twitter.com/emasquil">Twitter</a> or by <a href="mailto:emasquildev@gmail.com">email</a>.</p>
+<p>If you have any doubts or comments, reach out on <a href="https://twitter.com/emasquil">Twitter</a> or by <a href="mailto:eliasmasquil@gmail.com">email</a>.</p>
 ]]></content>
         </item>
         
